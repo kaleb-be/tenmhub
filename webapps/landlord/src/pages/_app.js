@@ -77,7 +77,7 @@ function MyApp(props) {
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
-        <link rel="shortcut icon" href={`${config.BASE_PATH}/favicon.svg`} />
+        <link rel="shortcut icon" href={`${config.BASE_PATH}/tmh_logo.svg`} />
       </Head>
       <main className={roboto.className}>
         <ThemeProvider theme={theme}>

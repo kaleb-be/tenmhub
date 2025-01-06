@@ -17,7 +17,11 @@ export default async function SignInLayout({
       <div className="flex h-screen">
         <div className="hidden lg:flex flex-col items-center justify-center space-y-20 text-center font-medium bg-sky-900 text-white/95 w-[36rem]">
           <div className="space-y-2">
-            <div className="text-5xl">{getServerEnv('APP_NAME')}</div>
+            <div className="text-5xl">
+              {getServerEnv('APP_NAME')}
+              {/*<img src={`${getServerEnv('BASE_PATH')}/public/tmh_logo_label.svg`} />*/}
+
+            </div>
             <div>{t('for tenants')}</div>
           </div>
           <WelcomeIllustration />

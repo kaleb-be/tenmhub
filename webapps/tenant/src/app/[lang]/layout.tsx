@@ -42,10 +42,10 @@ export default async function RootLayout({
   return (
     <html lang={lang} translate="no" className="overscroll-none">
       <head>
-        <link rel="icon" href={`${process.env.BASE_PATH}/favicon.svg`} />
+        <link rel="icon" href={`${process.env.BASE_PATH}/tmh_logo.svg`} />
         <EnvScript
           env={{
-            NEXT_PUBLIC_APP_NAME: process.env.APP_NAME || 'MicroRealEstate',
+            NEXT_PUBLIC_APP_NAME: process.env.APP_NAME || 'TenM Hub',
             NEXT_PUBLIC_BASE_PATH: process.env.BASE_PATH,
             NEXT_PUBLIC_CORS_ENABLED: process.env.CORS_ENABLED,
             NEXT_PUBLIC_DEMO_MODE: process.env.DEMO_MODE,
