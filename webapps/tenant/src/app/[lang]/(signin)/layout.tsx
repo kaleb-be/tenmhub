@@ -2,7 +2,7 @@ import { EnvironmentBar } from '@/components/bars/environment-bar';
 import getServerEnv from '@/utils/env/server';
 import getTranslation from '@/utils/i18n/server/getTranslation';
 import type { ReactNode } from 'react';
-import { WelcomeIllustration } from '@/components/illustrations';
+import { WelcomeIllustration, TenmhubIllustration } from '@/components/illustrations';
 
 export default async function SignInLayout({
   children
@@ -15,13 +15,13 @@ export default async function SignInLayout({
     <>
       <EnvironmentBar className="bg-card shadow sticky top-0 z-40 w-full" />
       <div className="flex h-screen">
-        <div className="hidden lg:flex flex-col items-center justify-center space-y-20 text-center font-medium bg-sky-900 text-white/95 w-[36rem]">
-          <div className="space-y-2">
-            <div className="text-5xl">
-              {getServerEnv('APP_NAME')}
-              {/*<img src={`${getServerEnv('BASE_PATH')}/public/tmh_logo_label.svg`} />*/}
+        <div className="hidden lg:flex flex-col items-center justify-center space-y-20 text-center font-medium bg-[#018786]  text-white/95 w-[36rem]">
 
-            </div>
+          <div className="space-y-3">
+            <TenmhubIllustration />
+            {/*<div className="text-5xl">*/}
+            {/*  {getServerEnv('APP_NAME')}*/}
+            {/*</div>*/}
             <div>{t('for tenants')}</div>
           </div>
           <WelcomeIllustration />

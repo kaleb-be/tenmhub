@@ -25,6 +25,25 @@ export const SignInUpIllustration = ({ label }) => {
     </div>
   );
 };
+export const TenmhubLLIllustration = ({ label }) => {
+  const { t } = useTranslation('common');
+  return (
+    <div className="h-fit w-[90%] p-7">
+      <Image
+        src={`${config.BASE_PATH}/tmh_logo_label.svg`}
+        alt="TenM Hub"
+        priority={true}
+        sizes={'10vw'}
+        style={{
+          width: '100%',
+          height: 'auto'
+        }}
+        width={500}
+        height={300}
+      />
+    </div>
+  );
+};
 
 export const EmptyIllustration = ({ label }) => {
   const { t } = useTranslation('common');
