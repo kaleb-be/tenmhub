@@ -53,7 +53,9 @@ export default function SignIn() {
           }
         );
         if (response.status >= 200 && response.status < 300) {
+          // TODO: ENSURE THE OTP IS SUCCESSFULLY SENT
           return router.replace(`/otp/${encodeURIComponent(values.email)}`);
+          return router.replace(`/dashboard`);
         }
       } catch (error) {
         console.error(error);

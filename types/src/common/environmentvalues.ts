@@ -62,4 +62,8 @@ export type EnvironmentValues = {
     replyToEmail: string;
     bccEmails: string;
   };
+  UPSTASH_REDIS_URL?:string;
+  UPSTASH_REDIS_TOKEN?:string;
+  QSTASH_URL?: string;
+  QSTASH_TOKEN?: string;
 };
