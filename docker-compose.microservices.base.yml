@@ -31,7 +31,7 @@ services:
   # Gateway
   ###############################################################################
   gateway:
-    image: 'kaleb6e/tenmhub/gateway:${MRE_VERSION:-latest}'
+    image: 'kaleb6e/tenmhub-gateway:${MRE_VERSION:-latest}'
     environment:
       - NODE_ENV
       - LOGGER_LEVEL=$LOGGER_LEVEL
@@ -62,7 +62,7 @@ services:
   # Authenticator
   ###############################################################################
   authenticator:
-    image: 'kaleb6e/tenmhub/authenticator:${MRE_VERSION:-latest}'
+    image: 'kaleb6e/tenmhub-authenticator:${MRE_VERSION:-latest}'
     environment:
       - NODE_ENV
       - PORT=$AUTHENTICATOR_PORT
@@ -89,7 +89,7 @@ services:
   # PDFGenerator
   ###############################################################################
   pdfgenerator:
-    image: 'kaleb6e/tenmhub/pdfgenerator:${MRE_VERSION:-latest}'
+    image: 'kaleb6e/tenmhub-pdfgenerator:${MRE_VERSION:-latest}'
     environment:
       - NODE_ENV
       - PORT=$PDFGENERATOR_PORT
@@ -109,7 +109,7 @@ services:
   # Emailer
   ###############################################################################
   emailer:
-    image: 'kaleb6e/tenmhub/emailer:${MRE_VERSION:-latest}'
+    image: 'kaleb6e/tenmhub-emailer:${MRE_VERSION:-latest}'
     environment:
       - NODE_ENV
       - ALLOW_SENDING_EMAILS
@@ -146,7 +146,7 @@ services:
   # api
   ###############################################################################
   api:
-    image: 'kaleb6e/tenmhub/api:${MRE_VERSION:-latest}'
+    image: 'kaleb6e/tenmhub-api:${MRE_VERSION:-latest}'
     volumes:
       - ./backup:/usr/app/backup
     environment:
@@ -173,7 +173,7 @@ services:
   # tenant api
   ###############################################################################
   tenantapi:
-    image: 'kaleb6e/tenmhub/tenantapi:${MRE_VERSION:-latest}'
+    image: 'kaleb6e/tenmhub-tenantapi:${MRE_VERSION:-latest}'
     environment:
       - NODE_ENV
       - PORT=$TENANTAPI_PORT
@@ -191,7 +191,7 @@ services:
   # Landlord frontend
   ###############################################################################
   landlord-frontend:
-    image: 'kaleb6e/tenmhub/landlord-frontend:${MRE_VERSION:-latest}'
+    image: 'kaleb6e/tenmhub-landlord-frontend:${MRE_VERSION:-latest}'
     environment:
       - BASE_PATH=$LANDLORD_BASE_PATH
       - PORT=$LANDLORD_FRONTEND_PORT
@@ -212,7 +212,7 @@ services:
   # Tenant frontend
   ###############################################################################
   tenant-frontend:
-    image: 'kaleb6e/tenmhub/tenant-frontend:${MRE_VERSION:-latest}'
+    image: 'kaleb6e/tenmhub-tenant-frontend:${MRE_VERSION:-latest}'
     environment:
       - BASE_PATH=$TENANT_BASE_PATH
       - PORT=$TENANT_FRONTEND_PORT

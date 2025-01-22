@@ -10,7 +10,7 @@ services:
   # ResetService
   ###############################################################################
   resetservice:
-    image: 'kaleb6e/tenmhub/resetservice:${MRE_VERSION:-latest}'
+    image: 'kaleb6e/tenmhub-resetservice:${MRE_VERSION:-latest}'
     build:
       context: .
       dockerfile: services/resetservice/dev.Dockerfile
