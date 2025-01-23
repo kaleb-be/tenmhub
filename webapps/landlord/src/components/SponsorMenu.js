@@ -17,13 +17,14 @@ export default function SponsorMenu({ className }) {
   };
 
   return (
-    <SideMenuButton
-      item={{
-        Icon: HeartBeating,
-        labelId: 'Sponsor this project'
-      }}
-      onClick={handleSponsorClicked}
-      className={className}
-    />
+    <></>
+      // <SideMenuButton
+    //   item={{
+    //     Icon: HeartBeating,
+    //     labelId: 'Sponsor this project'
+    //   }}
+    //   onClick={handleSponsorClicked}
+    //   className={className}
+    // />
   );
 }
