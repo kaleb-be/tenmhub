@@ -125,17 +125,17 @@ export default function SignIn() {
           );
         }}
       </Formik>
-      {!config.DEMO_MODE && config.SIGNUP && (
-        <div className="mt-10 lg:mt-0 lg:absolute lg:bottom-10 text-center text-muted-foreground w-full">
-          {t('New to {{APP_NAME}}?', {
-            APP_NAME: config.APP_NAME
-          })}{' '}
-          <Link href="/signup" data-cy="signup">
-            {t('Create an account')}
-          </Link>
-          .
-        </div>
-      )}
+      {/*{!config.DEMO_MODE && config.SIGNUP && (*/}
+      {/*  <div className="mt-10 lg:mt-0 lg:absolute lg:bottom-10 text-center text-muted-foreground w-full">*/}
+      {/*    {t('New to {{APP_NAME}}?', {*/}
+      {/*      APP_NAME: config.APP_NAME*/}
+      {/*    })}{' '}*/}
+      {/*    <Link href="/signup" data-cy="signup">*/}
+      {/*      {t('Create an account')}*/}
+      {/*    </Link>*/}
+      {/*    .*/}
+      {/*  </div>*/}
+      {/*)}*/}
     </SignInUpLayout>
   );
 }

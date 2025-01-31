@@ -1,7 +1,7 @@
 import * as jose from 'jose';
-
 import { action, computed, flow, makeObservable, observable } from 'mobx';
 import { apiFetcher, authApiFetcher, setAccessToken } from '../utils/fetch';
+import Cookies from 'js-cookie';
 
 import { isServer } from '@microrealestate/commonui/utils';
 
@@ -58,7 +58,7 @@ export default class User {
     this.lastName = lastname;
     this.email = email;
     this.token = accessToken;
-    this.tokenExpiry = exp;
+    this.tokenExpiry = 7;
     setAccessToken(accessToken);
   }
 
@@ -115,6 +115,9 @@ export default class User {
         response = yield authFetchApi.post(
           '/authenticator/landlord/refreshtoken'
         );
+
+        Cookies.set('analytics', 'enabled', { expires: 365 });
+        console.log("Analytics cookies enabled");
 
         const cookies = response.headers['set-cookie'];
         if (cookies) {
