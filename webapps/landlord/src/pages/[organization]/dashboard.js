@@ -5,6 +5,7 @@ import {
   fetchTenants,
   QueryKeys
 } from '../../utils/restcalls';
+import Cookies from 'js-cookie';
 import GeneralFigures from '../../components/dashboard/GeneralFigures';
 import MonthFigures from '../../components/dashboard/MonthFigures';
 import Page from '../../components/Page';
@@ -52,6 +53,9 @@ function Dashboard() {
     !dashboardQuery?.data?.overview?.propertyCount ||
     !tenantsQuery?.data?.length ||
     !propertiesQuery?.data?.length;
+
+  Cookies.set('analytics', 'enabled', { expires: 365 });
+  console.log("Analytics cookies enabled");
 
   return (
     <Page loading={isLoading} dataCy="dashboardPage">

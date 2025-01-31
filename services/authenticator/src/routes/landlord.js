@@ -17,10 +17,10 @@ const _generateTokens = async (dbAccount) => {
     Service.getInstance().envConfig.getValues();
   const { _id, password, ...account } = dbAccount;
   const refreshToken = jwt.sign({ account }, REFRESH_TOKEN_SECRET, {
-    expiresIn: PRODUCTION ? '600s' : '12h'
+    expiresIn: PRODUCTION ? '3600s' : '12h'
   });
   const accessToken = jwt.sign({ account }, ACCESS_TOKEN_SECRET, {
-    expiresIn: '30s'
+    expiresIn: '3600s'
   });
 
   // save tokens
@@ -144,7 +144,7 @@ const _applicationSignIn = Middlewares.asyncWrapper(async (req, res) => {
   // Generate only an accessToken, but no refreshToken
   delete application.clientSecret;
   const accessToken = jwt.sign({ application }, ACCESS_TOKEN_SECRET, {
-    expiresIn: '300s'
+    expiresIn: '6h'
   });
 
   res.json({
@@ -191,7 +191,7 @@ const _userSignIn = Middlewares.asyncWrapper(async (req, res) => {
 export default function () {
   const {
     APPCREDZ_TOKEN_SECRET,
-    ACCESS_TOKEN_SECRET,
+    // ACCESS_TOKEN_SECRET,
     EMAILER_URL,
     RESET_TOKEN_SECRET,
     SIGNUP,
@@ -249,10 +249,10 @@ export default function () {
     })
   );
 
-  landlordRouter.use(
-    '/appcredz',
-    Middlewares.needAccessToken(ACCESS_TOKEN_SECRET)
-  );
+  // landlordRouter.use(
+  //   '/appcredz',
+  //   Middlewares.needAccessToken(ACCESS_TOKEN_SECRET)
+  // );
   landlordRouter.use('/appcredz', Middlewares.checkOrganization());
   landlordRouter.post(
     '/appcredz',

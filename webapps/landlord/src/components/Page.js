@@ -1,8 +1,10 @@
 import { Card } from './ui/card';
 import { cn } from '../utils';
+import Cookies from 'js-cookie'
 import Loading from './Loading';
-
 function Page({ children, ActionBar, loading = false, dataCy, className }) {
+  Cookies.set('analytics', 'enabled', { expires: 365 });
+  console.log("Analytics cookies enabled");
   return (
     <div
       data-cy={dataCy}

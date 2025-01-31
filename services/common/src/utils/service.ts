@@ -216,7 +216,7 @@ export default class Service {
       role
     };
     const accessToken = jwt.sign({ service }, ACCESS_TOKEN_SECRET, {
-      expiresIn: '30s'
+      expiresIn: '6h'
     });
 
     return accessToken;

@@ -7,6 +7,7 @@ import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 import 'react-awesome-lightbox/build/style.css';
 import '../components/PdfViewer/pdfviewer.css';
 import '../components/RichTextEditor/richtexteditor.css';
+import Cookies from 'js-cookie';
 
 import * as Yup from 'yup';
 
@@ -58,6 +59,9 @@ const roboto = Roboto({
 function MyApp(props) {
   const { Component, pageProps } = props;
   moment.locale(pageProps?.__lang ?? 'en');
+
+  Cookies.set('analytics', 'enabled', { expires: 365 });
+  console.log("Analytics cookies enabled");
 
   useEffect(() => {
     // Remove the server-side injected CSS.
